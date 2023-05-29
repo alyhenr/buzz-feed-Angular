@@ -17,9 +17,7 @@ export class QuizzComponent implements OnInit {
   answers: string[] = [];
 
   finished: boolean = false;
-
   result: string = '';
-  counter: number = 0;
 
   constructor() {}
 
@@ -28,29 +26,30 @@ export class QuizzComponent implements OnInit {
       this.title = quizzQuestions.title;
       this.questions = quizzQuestions.questions;
       this.questionSelected = this.questions[this.index];
-      console.log(this.questions);
     }
   }
 
   handleClick(value: string): void {
     if (this.finished) return;
+
+    this.answers.push(value);
     this.index++;
     this.finished = this.index === this.questions.length;
     if (this.finished) {
       this.finishGame();
     } else {
-      this.answers.push(value);
       this.questionSelected = this.questions[this.index];
     }
   }
 
   finishGame(): void {
-    this.counter = this.answers.filter((alias) => alias === 'A').length;
+    const counter: number = this.answers.filter(
+      (alias) => alias === 'A'
+    ).length;
 
     this.result =
-      this.counter > this.answers.length / 2
+      counter > this.answers.length / 2
         ? quizzQuestions.results.A
         : quizzQuestions.results.B;
-    console.log(this.result);
   }
 }
