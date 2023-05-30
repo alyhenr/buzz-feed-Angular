@@ -113,7 +113,13 @@
         }
     ],
     "results": {
-        "A": "Você muito provavelmente seria um super vilão!",
-        "B": "Você muito provavelmente seria um super Herói!"
+        "A": {
+            "text": "Você muito provavelmente seria um super vilão!",
+            "imgURL": "https://wallpapercrafter.com/desktop/72865-joker-movie-joker-hd-superheroes-supervillain-hd-4k.jpg"
+        },
+        "B": {
+            "text": "Você muito provavelmente seria um super Herói!",
+            "imgURL": "https://www.dsogaming.com/wp-content/uploads/2017/10/Batman-Arkham-Asylum-feature.jpg"
+        }
     }
 }

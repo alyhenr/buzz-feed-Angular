@@ -14,6 +14,7 @@
     </div>
     <div *ngIf="finished" class="quizz_results">
         <h1>O seu resultado é: </h1><br />
-        <h2>{{ result }}</h2>
+        <h2>{{ result.text }}</h2>
+        <img src={{result.imgURL}} alt="pic of hero/villain">
     </div>
 </div>

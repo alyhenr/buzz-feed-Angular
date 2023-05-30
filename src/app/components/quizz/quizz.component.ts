@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import quizzQuestions from '../../../assets/data/questions.json';
 
+interface Result {
+  text: string;
+  imgURL: string;
+}
+
 @Component({
   selector: 'app-quizz',
   templateUrl: './quizz.component.html',
@@ -17,7 +22,11 @@ export class QuizzComponent implements OnInit {
   answers: string[] = [];
 
   finished: boolean = false;
-  result: string = '';
+
+  result: Result = {
+    text: '',
+    imgURL: '',
+  };
 
   constructor() {}
 
@@ -47,9 +56,10 @@ export class QuizzComponent implements OnInit {
       (alias) => alias === 'A'
     ).length;
 
-    this.result =
-      counter > this.answers.length / 2
-        ? quizzQuestions.results.A
-        : quizzQuestions.results.B;
+    const boolResult = counter > this.answers.length / 2;
+
+    this.result = boolResult
+      ? quizzQuestions.results.A
+      : quizzQuestions.results.B;
   }
 }

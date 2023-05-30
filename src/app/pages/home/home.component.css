@@ -1,0 +1,23 @@
+.restart-btn {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+
+    width: 100px;
+    height: 30px;
+
+    color: black;
+    border-radius: 5px;
+    border: none;
+    background-color: #644ED2;
+
+    cursor: pointer;
+}
+
+.restart-btn:hover {
+    scale: 1.01;
+    opacity: 0.6;
+
+    top: 14px;
+    color: white;
+}

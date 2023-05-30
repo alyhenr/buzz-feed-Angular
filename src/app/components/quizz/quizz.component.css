@@ -70,9 +70,17 @@
     gap: 20px;
 
     width: 100%;
-    height: 350px;
+    height: fit-content;
 
     background-color: #1F0539;
     border-radius: 15px;
     padding: 30px;
+}
+
+.quizz_results>img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px;
 }
